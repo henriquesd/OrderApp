@@ -32,8 +32,8 @@ namespace OrderApp.API.Controllers
             return _mapper.Map<IEnumerable<CustomerDto>>(await _customerRepository.GetAll());
         }
 
-        [HttpGet("{id:guid}")]
-        public async Task<CustomerOrdersDto> GetCustomersOrders(Guid id)
+        [HttpGet("CustomerOrders/{id:guid}")]
+        public async Task<ActionResult<CustomerOrdersDto>> GetCustomersOrders(Guid id)
         {
             var customerOrders = await _customerRepository.GetCustomersOrders(id);
 

@@ -52,7 +52,6 @@ namespace OrderApp.Domain.Tests
             Assert.False(result);
         }
 
-
         private Customer CreateCustomer(string name, string email)
         {
             var customer = new Customer

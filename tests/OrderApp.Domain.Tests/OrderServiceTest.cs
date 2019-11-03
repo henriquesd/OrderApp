@@ -11,15 +11,15 @@ namespace OrderApp.Domain.Tests
 {
     public class OrderServiceTest
     {
-        private readonly Mock<IOrderRepository> _orderRepository;
+        private readonly Mock<IOrderRepository> _orderRepositoryMock;
         private OrderService _orderService;
         private readonly decimal _price;
         private readonly Guid _customerId;
 
         public OrderServiceTest()
         {
-            _orderRepository = new Mock<IOrderRepository>();
-            _orderService = new OrderService(_orderRepository.Object);
+            _orderRepositoryMock = new Mock<IOrderRepository>();
+            _orderService = new OrderService(_orderRepositoryMock.Object);
             var faker = new Faker();
 
             _price = faker.Random.Decimal();
@@ -35,7 +35,7 @@ namespace OrderApp.Domain.Tests
                 Price = _price
             };
 
-            _orderRepository.Setup(o => o.Add(order)).Returns(Task.FromResult(true));
+            _orderRepositoryMock.Setup(o => o.Add(order)).Returns(Task.FromResult(true));
 
             var result = await _orderService.Add(order);
             result = await _orderService.Add(order);
