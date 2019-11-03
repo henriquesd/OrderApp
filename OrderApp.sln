@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApp.API", "src\OrderApp.API\OrderApp.API.csproj", "{DB9DFFDD-2D86-4342-942E-6C5262586FB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderApp.API", "src\OrderApp.API\OrderApp.API.csproj", "{DB9DFFDD-2D86-4342-942E-6C5262586FB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApp.Domain", "src\OrderApp.Domain\OrderApp.Domain.csproj", "{34AAA9E6-B1B7-4095-93C0-A63ACF066A28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderApp.Domain", "src\OrderApp.Domain\OrderApp.Domain.csproj", "{34AAA9E6-B1B7-4095-93C0-A63ACF066A28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApp.Infrastructure", "src\OrderApp.Infrastructure\OrderApp.Infrastructure.csproj", "{150C82D9-C8C2-41E3-9DEA-74041E706668}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderApp.Infrastructure", "src\OrderApp.Infrastructure\OrderApp.Infrastructure.csproj", "{150C82D9-C8C2-41E3-9DEA-74041E706668}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderApp.Domain.Tests", "tests\OrderApp.Domain.Tests\OrderApp.Domain.Tests.csproj", "{83EE85FE-5A4D-488B-8203-B21E56F59FC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{076B064D-658E-43C5-B2A7-0CCDEA6DE8B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +31,16 @@ Global
 		{150C82D9-C8C2-41E3-9DEA-74041E706668}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{150C82D9-C8C2-41E3-9DEA-74041E706668}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{150C82D9-C8C2-41E3-9DEA-74041E706668}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83EE85FE-5A4D-488B-8203-B21E56F59FC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83EE85FE-5A4D-488B-8203-B21E56F59FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83EE85FE-5A4D-488B-8203-B21E56F59FC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83EE85FE-5A4D-488B-8203-B21E56F59FC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{83EE85FE-5A4D-488B-8203-B21E56F59FC1} = {076B064D-658E-43C5-B2A7-0CCDEA6DE8B9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BDC59926-01B6-4C25-A6AB-67DF2648F7A9}

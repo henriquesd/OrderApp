@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using OrderApp.API.Dtos;
 using OrderApp.Domain.Models;
-using System.Linq;
 
 namespace OrderApp.API.Configuration
 {

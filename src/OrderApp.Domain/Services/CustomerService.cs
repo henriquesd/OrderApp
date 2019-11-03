@@ -13,8 +13,11 @@ namespace OrderApp.Domain.Services
         {
             _customerRepository = customerRepository;
         }
+
         public async Task<bool> Add(Customer customer)
         {
+            if (string.IsNullOrEmpty(customer.Name) || string.IsNullOrEmpty(customer.Email)) return false;
+
             if (_customerRepository.Search(c => c.Email == customer.Email).Result.Any())
                 return false;
 
