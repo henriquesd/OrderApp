@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderApp.Domain.Tests", "te
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{076B064D-658E-43C5-B2A7-0CCDEA6DE8B9}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderApp.API.Tests", "tests\OrderApp.API.Tests\OrderApp.API.Tests.csproj", "{3D121A31-0B6D-405A-902E-3B0B8699F336}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,12 +37,17 @@ Global
 		{83EE85FE-5A4D-488B-8203-B21E56F59FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83EE85FE-5A4D-488B-8203-B21E56F59FC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83EE85FE-5A4D-488B-8203-B21E56F59FC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D121A31-0B6D-405A-902E-3B0B8699F336}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D121A31-0B6D-405A-902E-3B0B8699F336}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D121A31-0B6D-405A-902E-3B0B8699F336}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D121A31-0B6D-405A-902E-3B0B8699F336}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{83EE85FE-5A4D-488B-8203-B21E56F59FC1} = {076B064D-658E-43C5-B2A7-0CCDEA6DE8B9}
+		{3D121A31-0B6D-405A-902E-3B0B8699F336} = {076B064D-658E-43C5-B2A7-0CCDEA6DE8B9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BDC59926-01B6-4C25-A6AB-67DF2648F7A9}

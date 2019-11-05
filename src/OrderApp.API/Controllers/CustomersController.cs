@@ -29,7 +29,7 @@ namespace OrderApp.API.Controllers
         [HttpGet]
         public async Task<IEnumerable<CustomerDto>> GetAll()
         {
-            return _mapper.Map<IEnumerable<CustomerDto>>(await _customerRepository.GetAll());
+            return _mapper.Map<CustomerDto[]>(await _customerRepository.GetAll());
         }
 
         [HttpGet("CustomerOrders/{id:guid}")]

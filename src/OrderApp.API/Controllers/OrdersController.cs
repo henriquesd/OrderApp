@@ -12,15 +12,11 @@ namespace OrderApp.API.Controllers
     [ApiController]
     public class OrdersController : Controller
     {
-        private readonly IOrderRepository _orderRepository;
         private readonly IOrderService _orderService;
         private readonly IMapper _mapper;
 
-        public OrdersController(IOrderRepository orderRepository,
-                                    IMapper mapper,
-                                    IOrderService orderService)
+        public OrdersController(IOrderService orderService, IMapper mapper)
         {
-            _orderRepository = orderRepository;
             _mapper = mapper;
             _orderService = orderService;
         }

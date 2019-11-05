@@ -2,7 +2,6 @@
 using OrderApp.Domain.Interfaces;
 using OrderApp.Domain.Models;
 using OrderApp.Infrastructure.Context;
-using System;
 using System.Threading.Tasks;
 
 namespace OrderApp.Infrastructure.Repository

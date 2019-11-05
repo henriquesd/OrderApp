@@ -3,6 +3,9 @@ using Moq;
 using OrderApp.Domain.Interfaces;
 using OrderApp.Domain.Models;
 using OrderApp.Domain.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -11,7 +14,7 @@ namespace OrderApp.Domain.Tests
     public class CustomerServiceTest
     {
         private readonly Mock<ICustomerRepository> _customerRepositoryMock;
-        private CustomerService _customerService;
+        private readonly CustomerService _customerService;
         private readonly string _name;
         private readonly string _email;
 
@@ -52,15 +55,27 @@ namespace OrderApp.Domain.Tests
             Assert.False(result);
         }
 
+        [Fact]
+        public async void ShouldNotCreateCustomer_IfEmailAlreadyExists()
+        {
+            var customer = CreateCustomer(_name, _email);
+            var customerList = CreateCustomerList(customer);
+
+            _customerRepositoryMock.Setup(x => x.Search(It.IsAny<Expression<Func<Customer, bool>>>())).ReturnsAsync(customerList);
+
+            var result = await _customerService.Add(customer);
+
+            Assert.False(result);
+        }
+
+        private List<Customer> CreateCustomerList(Customer customer)
+        {
+            return new List<Customer>() { new Customer { Id = customer.Id, Name = customer.Name, Email = customer.Email } };
+        }
+
         private Customer CreateCustomer(string name, string email)
         {
-            var customer = new Customer
-            {
-                Name = name,
-                Email = email
-            };
-
-            return customer;
+            return new Customer { Name = name, Email = email };
         }
     }
 }

@@ -3,7 +3,6 @@ using Moq;
 using OrderApp.Domain.Interfaces;
 using OrderApp.Domain.Models;
 using OrderApp.Domain.Services;
-using System;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -13,17 +12,13 @@ namespace OrderApp.Domain.Tests
     {
         private readonly Mock<IOrderRepository> _orderRepositoryMock;
         private OrderService _orderService;
-        private readonly decimal _price;
-        private readonly Guid _customerId;
+        private readonly Faker _faker;
 
         public OrderServiceTest()
         {
             _orderRepositoryMock = new Mock<IOrderRepository>();
             _orderService = new OrderService(_orderRepositoryMock.Object);
-            var faker = new Faker();
-
-            _price = faker.Random.Decimal();
-            _customerId = faker.Random.Guid();
+            _faker = new Faker();
         }
 
         [Fact]
@@ -31,8 +26,8 @@ namespace OrderApp.Domain.Tests
         {
             var order = new Order
             {
-                CustomerId = _customerId,
-                Price = _price
+                CustomerId = _faker.Random.Guid(),
+                Price = _faker.Random.Decimal()
             };
 
             _orderRepositoryMock.Setup(o => o.Add(order)).Returns(Task.FromResult(true));
